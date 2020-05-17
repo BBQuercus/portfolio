@@ -1,0 +1,25 @@
+.about {
+    @include defButton;
+    display: flex;
+    flex-direction: column;
+    padding: 0% 5% 5% 5%;
+
+    .image {
+        @include roundImage;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 24px;
+        padding: 10px 0px;
+    }
+
+    p {
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+}

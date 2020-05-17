@@ -1,0 +1,25 @@
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin defButton {
+    button {
+        background-color: var(--bg);
+        border-width: medium;
+        border-color: var(--blue);
+        border-radius: 22px;
+        color: var(--blue);
+        font-size: 16px;
+        padding: 10px 30px;
+    }
+}
+
+@mixin roundImage {
+    margin: 10px 0px 20px 0px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}

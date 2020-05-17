@@ -1,0 +1,62 @@
+.logo {
+    color: var(--text);
+    text-decoration: none;
+    z-index: 1;
+
+    span {
+        font-family: bold;
+    }
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+
+    path {
+        stroke: var(--text);
+    }
+}
+
+.navigation-overlay {
+    background-color: var(--menu-drop);
+    font-size: 16px;
+    height: 40%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    #hamburger-close {
+        position: absolute;
+        top: 7.5%;
+        right: 5%;
+    }
+
+    .menu {
+        padding-right: 5%;
+        position: relative;
+        text-align: center;
+        text-align: right;
+        top: 25%;
+        width: 100%;
+    }
+
+    a {
+        color: var(--menu-drop-text);
+        display: block;
+        padding: 8px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    a:hover,
+    a:focus {
+        color: var(--menu-drop-hover);
+    }
+
+    path {
+        fill: var(--menu-drop-text);
+    }
+}

@@ -1,0 +1,12 @@
+.socials {
+    display: flex;
+    align-items: baseline;
+
+    li {
+        padding: 10px;
+        list-style: none;
+    }
+    path {
+        fill: var(--text);
+    }
+}

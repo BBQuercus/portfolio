@@ -1,0 +1,26 @@
+html {
+    --blue: #00a3ff;
+    --text: #000000;
+    --text-home: #ffffff;
+    --bg: #ffffff;
+    --bg-home: #4e4e4e;
+    --bg-input: #dfdfdf;
+    --menu-drop: #dfdfdf;
+    --menu-drop-text: #000000;
+    --menu-drop-hover: #4e4e4e;
+}
+
+html[data-theme="dark"] {
+    --text: #dfdfdf;
+    --text-home: #000000;
+    --bg: #000000;
+    --bg-home: #000000;
+    --bg-input: #4e4e4e;
+    --menu-drop: #4e4e4e;
+    --menu-drop-text: #dfdfdf;
+    --menu-drop-hover: #ffffff;
+}
+
+.hidden {
+    display: none !important;
+}
