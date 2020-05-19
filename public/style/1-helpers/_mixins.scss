@@ -7,8 +7,7 @@
 @mixin defButton {
     button {
         background-color: var(--bg);
-        border-width: medium;
-        border-color: var(--blue);
+        border: medium solid var(--blue);
         border-radius: 22px;
         color: var(--blue);
         font-size: 16px;

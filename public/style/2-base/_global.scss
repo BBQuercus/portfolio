@@ -19,7 +19,16 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
+html,
 body {
+    position: relative;
+    overflow-x: hidden;
+
     color: var(--text);
     background-color: var(--bg);
+}
+
+button {
+    background: none;
+    border: none;
 }

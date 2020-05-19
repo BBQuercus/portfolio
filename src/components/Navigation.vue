@@ -1,78 +1,13 @@
 <template>
   <div id="nav">
-    <div class="navigation">
+    <nav>
       <!-- Logo -->
       <router-link to="/" class="logo">
         <span @click="closeNavigation">Bastian T. Eichenberger</span>
       </router-link>
 
-      <!-- Burger open icon -->
-      <button @click="toggleNavigation">
-        <svg
-          id="hamburger-open"
-          width="47"
-          height="47"
-          viewBox="0 0 47 47"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M10.4445 16.9722H36.5556"
-            stroke="white"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M10.4445 23.5H36.5556"
-            stroke="white"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M10.4445 30.0278H36.5556"
-            stroke="white"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-    </div>
-
-    <!-- Navigation links -->
-    <div class="navigation-overlay hidden">
-      <!-- Burger close icon -->
-      <button @click="toggleNavigation">
-        <svg
-          id="hamburger-close"
-          width="47"
-          height="47"
-          viewBox="-4 -4 47 47"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M28.8938 10.1059C29.0073 10.2191 29.0973 10.3536 29.1588 10.5016C29.2202 10.6497 29.2518 10.8084 29.2518 10.9687C29.2518 11.129 29.2202 11.2878 29.1588 11.4358C29.0973 11.5839 29.0073 11.7184 28.8938 11.8316L11.8313 28.8941C11.6024 29.123 11.292 29.2515 10.9684 29.2515C10.6448 29.2515 10.3344 29.123 10.1055 28.8941C9.87667 28.6653 9.74811 28.3549 9.74811 28.0312C9.74811 27.7076 9.87667 27.3972 10.1055 27.1684L27.168 10.1059C27.2812 9.99236 27.4157 9.90231 27.5638 9.84087C27.7119 9.77943 27.8706 9.7478 28.0309 9.7478C28.1912 9.7478 28.3499 9.77943 28.498 9.84087C28.6461 9.90231 28.7806 9.99236 28.8938 10.1059V10.1059Z"
-            fill="white"
-          />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M10.1059 10.1059C9.99239 10.2191 9.90234 10.3536 9.8409 10.5016C9.77946 10.6497 9.74783 10.8084 9.74783 10.9687C9.74783 11.129 9.77946 11.2878 9.8409 11.4358C9.90234 11.5839 9.99239 11.7184 10.1059 11.8316L27.1684 28.8941C27.3972 29.123 27.7076 29.2515 28.0313 29.2515C28.3549 29.2515 28.6653 29.123 28.8941 28.8941C29.123 28.6653 29.2515 28.3549 29.2515 28.0312C29.2515 27.7076 29.123 27.3972 28.8941 27.1684L11.8316 10.1059C11.7184 9.99236 11.5839 9.90231 11.4359 9.84087C11.2878 9.77943 11.1291 9.7478 10.9688 9.7478C10.8085 9.7478 10.6497 9.77943 10.5017 9.84087C10.3536 9.90231 10.2191 9.99236 10.1059 10.1059V10.1059Z"
-            fill="white"
-          />
-        </svg>
-      </button>
-
       <!-- Menu items -->
-      <ul class="menu" id="navigation">
+      <ul class="nav-links" id="navigation">
         <li @click="closeNavigation" v-for="route in routes" :key="route.path+route.name">
           <router-link :to="route.path">{{route.name}}</router-link>
         </li>
@@ -108,7 +43,15 @@
           </button>
         </li>
       </ul>
-    </div>
+
+      <!-- Burger icon -->
+      <div class="burger" @click="toggleNavigation">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
+    </nav>
   </div>
 </template>
 
@@ -126,10 +69,11 @@ export default {
   },
   methods: {
     closeNavigation() {
-      document.querySelector(".navigation-overlay").classList.add("hidden");
+      document.querySelector(".nav-links").classList.remove("nav-active");
     },
     toggleNavigation() {
-      document.querySelector(".navigation-overlay").classList.toggle("hidden");
+      document.querySelector(".nav-links").classList.toggle("nav-active");
+      document.querySelector(".burger").classList.toggle("open");
     },
     toggleColorMode() {
       if (document.documentElement.getAttribute("data-theme") === "light") {

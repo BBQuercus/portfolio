@@ -23,8 +23,8 @@
         color: var(--text);
     }
 
+    @include defButton;
     .button {
-        @include defButton;
         padding-top: 20px;
         font-family: bold;
         text-align: center;

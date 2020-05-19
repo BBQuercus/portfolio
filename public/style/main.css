@@ -47,9 +47,17 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+html,
 body {
+  position: relative;
+  overflow-x: hidden;
   color: var(--text);
   background-color: var(--bg);
+}
+
+button {
+  background: none;
+  border: none;
 }
 
 @font-face {
@@ -62,17 +70,7 @@ body {
   src: url(../fonts/PTSans-Regular.ttf);
 }
 
-.logo {
-  color: var(--text);
-  text-decoration: none;
-  z-index: 1;
-}
-
-.logo span {
-  font-family: bold;
-}
-
-.navigation {
+nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,39 +80,35 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  min-height: 8vh;
   padding: 5%;
 }
 
-.navigation path {
-  stroke: var(--text);
+nav .logo {
+  color: var(--text);
+  font-family: regular;
+  text-decoration: none;
+  z-index: 2;
 }
 
-.navigation-overlay {
-  background-color: var(--menu-drop);
-  font-size: 16px;
-  height: 40%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
+nav .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40%;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-.navigation-overlay #hamburger-close {
-  position: absolute;
-  top: 7.5%;
-  right: 5%;
+nav .nav-links li {
+  list-style: none;
 }
 
-.navigation-overlay .menu {
-  padding-right: 5%;
-  position: relative;
-  text-align: center;
-  text-align: right;
-  top: 25%;
-  width: 100%;
-}
-
-.navigation-overlay a {
+nav .nav-links a {
   color: var(--menu-drop-text);
   display: block;
   padding: 8px;
@@ -123,13 +117,78 @@ body {
   transition: 0.3s;
 }
 
-.navigation-overlay a:hover,
-.navigation-overlay a:focus {
+nav .nav-links a:hover,
+nav .nav-links a:focus {
   color: var(--menu-drop-hover);
 }
 
-.navigation-overlay path {
-  fill: var(--menu-drop-text);
+nav .burger {
+  display: none;
+  cursor: pointer;
+}
+
+nav .burger div {
+  width: 25px;
+  height: 2px;
+  background-color: var(--text);
+  border-radius: 5px;
+  margin: 5px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+nav .open .line1 {
+  -webkit-transform: rotate(-45deg) translate(-5px, 5px);
+          transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+nav .open .line2 {
+  opacity: 0;
+}
+
+nav .open .line3 {
+  -webkit-transform: rotate(45deg) translate(-5px, -5px);
+          transform: rotate(45deg) translate(-5px, -5px);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  nav .nav-links {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    height: 15vh;
+  }
+  nav .burger {
+    z-index: 1;
+    display: inline;
+  }
+  nav .nav-links {
+    position: absolute;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: var(--menu-drop);
+    border-radius: 10px 0px 0px 10px;
+    top: calc(15vh);
+    right: 0px;
+    width: 50%;
+    padding-right: 5%;
+    min-height: 180px;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+  }
+  nav .nav-active {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
 }
 
 .page-loader {
@@ -251,8 +310,7 @@ body {
 
 .modal .contact-form button {
   background-color: var(--bg);
-  border-width: medium;
-  border-color: var(--blue);
+  border: medium solid var(--blue);
   border-radius: 22px;
   color: var(--blue);
   font-size: 16px;
@@ -349,20 +407,19 @@ body {
   color: var(--text);
 }
 
-.home .button {
-  padding-top: 20px;
-  font-family: bold;
-  text-align: center;
-}
-
-.home .button button {
+.home button {
   background-color: var(--bg);
-  border-width: medium;
-  border-color: var(--blue);
+  border: medium solid var(--blue);
   border-radius: 22px;
   color: var(--blue);
   font-size: 16px;
   padding: 10px 30px;
+}
+
+.home .button {
+  padding-top: 20px;
+  font-family: bold;
+  text-align: center;
 }
 
 .post {
@@ -411,8 +468,7 @@ body {
 
 .about button {
   background-color: var(--bg);
-  border-width: medium;
-  border-color: var(--blue);
+  border: medium solid var(--blue);
   border-radius: 22px;
   color: var(--blue);
   font-size: 16px;
