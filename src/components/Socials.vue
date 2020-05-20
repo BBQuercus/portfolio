@@ -1,10 +1,10 @@
 <template>
   <div class="socials">
-    <ui v-for="element in elements" :key="element">
+    <ul v-for="element in elements" :key="element.value+element.icon">
       <li>
         <a :href="element.value" v-html="element.icon" target="_blank"></a>
       </li>
-    </ui>
+    </ul>
   </div>
 </template>
 

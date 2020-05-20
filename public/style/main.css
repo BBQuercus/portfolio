@@ -1,5 +1,6 @@
 html {
-  --bg: #ffffff;
+  --bg: #e9e9e9;
+  --bg-image: url("../images/home_light.jpg");
   --blue: #00a3ff;
   --btn-hover: #4e4e4e;
   --btn-hover-text: #ffffff;
@@ -18,6 +19,7 @@ html {
 
 html[data-theme="dark"] {
   --bg: #000000;
+  --bg-image: url("../images/home_dark.jpeg");
   --drop-hover: #ffffff;
   --drop-text: #a0a0a0;
   --drop: #4e4e4e;
@@ -125,7 +127,6 @@ nav span {
 nav .logo {
   color: var(--text);
   text-decoration: none;
-  z-index: 2;
 }
 
 nav .nav-links {
@@ -161,6 +162,15 @@ nav .nav-links a {
 nav .nav-links a:hover,
 nav .nav-links a:focus {
   color: var(--drop-hover);
+}
+
+nav .nav-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
 }
 
 nav .burger {
@@ -210,10 +220,11 @@ nav .open .line3 {
     height: 15vh;
   }
   nav .burger {
-    z-index: 1;
+    z-index: 2;
     display: inline;
   }
   nav .nav-links {
+    z-index: 3;
     position: absolute;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -236,6 +247,9 @@ nav .open .line3 {
   nav .nav-active {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
+  }
+  nav .logo {
+    z-index: 4;
   }
 }
 
@@ -311,15 +325,7 @@ nav .open .line3 {
   color: var(--btn-hover-text);
 }
 
-.modal {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  padding: 10%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 2;
+.modal-bg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -329,9 +335,26 @@ nav .open .line3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  padding: 10%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s;
+  transition: visibility 0s, opacity 0.5s;
 }
 
-.modal .contact-form {
+.modal-bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
   padding: 5%;
   max-height: calc(100vh - 5%);
   min-width: 300px;
@@ -340,74 +363,77 @@ nav .open .line3 {
   color: var(--form-text);
   background-color: var(--form-bg);
   border-radius: 10px;
-  z-index: 3;
+  z-index: 4;
 }
 
-.modal .contact-form .error {
+.modal .error {
   border: solid thin;
   border-color: red !important;
 }
 
-.modal .contact-form .error-list {
+.modal .error-list {
   padding-bottom: 10px;
 }
 
-.modal .contact-form .error-list li {
+.modal .error-list li {
   display: inline;
 }
 
-.modal .contact-form .error-list li:after {
+.modal .error-list li:after {
   content: ", ";
 }
 
-.modal .contact-form .error-list li:nth-child(n + 2):last-child:before {
+.modal .error-list li:nth-child(n + 2):last-child:before {
   content: "and ";
 }
 
-.modal .contact-form .error-list li:last-child:after {
+.modal .error-list li:last-child:after {
   content: ".";
 }
 
-.modal .contact-form button {
+.modal button {
   background-color: var(--bg);
   border: medium solid var(--blue);
   border-radius: 22px;
   color: var(--blue);
   font-size: 16px;
   padding: 10px 30px;
+  cursor: pointer;
 }
 
-.modal .contact-form .btn-close {
+.modal .btn-close {
   border: none;
   background: none;
   padding: 0px;
   padding-bottom: 10px;
+  width: 100%;
+  text-align: right;
 }
 
-.modal .contact-form .btn-close path {
+.modal .btn-close path {
   fill: var(--icon);
 }
 
-.modal .contact-form .btn-close :hover path {
+.modal .btn-close :hover path {
   fill: var(--icon-hover);
 }
 
-.modal .contact-form label {
+.modal label {
   font-size: 16px;
 }
 
-.modal .contact-form input {
+.modal input {
   margin: 2px 0px 10px 0px;
 }
 
-.modal .contact-form textarea {
+.modal textarea {
   resize: vertical;
   min-height: calc(30px);
   margin-top: 2px;
 }
 
-.modal .contact-form input,
-.modal .contact-form textarea {
+.modal input,
+.modal textarea {
   padding: 5px 8px;
   width: 100%;
   font-size: 16px;
@@ -418,16 +444,16 @@ nav .open .line3 {
   background-color: var(--form-input-bg);
 }
 
-.modal .contact-form input:focus,
-.modal .contact-form textarea:focus {
+.modal input:focus,
+.modal textarea:focus {
   border-color: var(--form-input-border) !important;
 }
 
-.modal .contact-form p {
+.modal p {
   padding: 2px 0px 10px 0px;
 }
 
-.modal .contact-form form button:hover {
+.modal form button:hover {
   background-color: var(--btn-hover);
   color: var(--btn-hover-text);
 }
@@ -456,13 +482,11 @@ nav .open .line3 {
 }
 
 .home-image {
-  background-image: url(../images/background.png);
+  background-image: var(--bg-image);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: var(--bg-home);
-  color: var(--text-home);
 }
 
 .home {
@@ -491,30 +515,9 @@ nav .open .line3 {
   color: var(--text);
 }
 
-.home button {
-  background-color: var(--bg);
-  border: medium solid var(--blue);
-  border-radius: 22px;
-  color: var(--blue);
-  font-size: 16px;
-  padding: 10px 30px;
-}
-
-.home .button {
-  padding-top: 20px;
-  font-family: bold;
-  text-align: center;
-}
-
 @media only screen and (min-width: 800px) and (max-width: 1080px) {
   .home h1 {
     font-size: 80px;
-  }
-  .button {
-    padding-top: 30px;
-  }
-  .button button {
-    font-size: 20px;
   }
 }
 
@@ -527,12 +530,6 @@ nav .open .line3 {
   }
   .home h1 {
     font-size: 100px;
-  }
-  .home .button {
-    padding-top: 40px;
-  }
-  .home .button button {
-    font-size: 24px;
   }
 }
 
@@ -563,6 +560,12 @@ nav .open .line3 {
   padding: 10px 0px;
   font-size: 16px;
   white-space: pre-wrap;
+}
+
+.post p a {
+  color: var(--drop-text);
+  font-family: bold;
+  text-decoration: none;
 }
 
 .post path {
@@ -615,6 +618,7 @@ nav .open .line3 {
   color: var(--blue);
   font-size: 16px;
   padding: 10px 30px;
+  cursor: pointer;
 }
 
 .about .image {

@@ -1,3 +1,4 @@
+// Color change based on user preferences
 document.addEventListener("readystatechange", () => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         document.documentElement.setAttribute("data-theme", "dark");
@@ -7,9 +8,14 @@ document.addEventListener("readystatechange", () => {
     }
     if (document.readyState == "complete") {
         document.querySelector(".page-loader").classList.add("hidden");
+        // Initial home-image
+        if (document.location.pathname === "/") {
+            document.querySelector('body').classList.add('home-image');
+        }
     }
 });
 
+// Avoid css animation resize bug
 let resizeTimer;
 window.addEventListener("resize", () => {
     document.body.classList.add("resize-animation-stopper");
@@ -17,4 +23,4 @@ window.addEventListener("resize", () => {
     resizeTimer = setTimeout(() => {
         document.body.classList.remove("resize-animation-stopper");
     }, 400);
-});
+}); 

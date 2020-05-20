@@ -1,5 +1,6 @@
 html {
-    --bg: #ffffff;
+    --bg: #e9e9e9;
+    --bg-image: url("../images/home_light.jpg");
     --blue: #00a3ff;
 
     --btn-hover: #4e4e4e;
@@ -23,6 +24,7 @@ html {
 
 html[data-theme="dark"] {
     --bg: #000000;
+    --bg-image: url("../images/home_dark.jpeg");
 
     --drop-hover: #ffffff;
     --drop-text: #a0a0a0;

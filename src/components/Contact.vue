@@ -2,8 +2,8 @@
   <div class="contact">
     <button @click="openForm" class="contact-button">Contact Form</button>
 
-    <div class="modal hidden">
-      <div class="contact-form">
+    <div class="modal-bg">
+      <div class="modal">
         <button @click="closeForm" class="btn-close">
           <svg
             width="32"
@@ -22,9 +22,16 @@
             />
           </svg>
         </button>
-        <form @submit="submitForm" action="/cgi-sys/FormMail.cgi" method="post">
+        <form @submit="validateForm" action="/cgi-sys/FormMail.cgi" method="POST">
           <label for="name">Name*</label>
-          <input id="input-name" v-model="name" type="text" name="name" tabindex="1" autocomplete="off" />
+          <input
+            id="input-name"
+            v-model="name"
+            type="text"
+            name="name"
+            tabindex="1"
+            autocomplete="off"
+          />
 
           <label for="email">Email*</label>
           <input id="input-email" v-model="email" type="email" tabindex="2" autocomplete="off" />
@@ -66,19 +73,19 @@ export default {
   },
   methods: {
     openForm() {
-      document.querySelector(".modal").classList.remove("hidden");
+      document.querySelector(".modal-bg").classList.add("modal-bg-active");
       document.querySelector(".contact-button").classList.add("hidden");
       document.querySelector("#input-name").focus();
     },
     closeForm() {
-      document.querySelector(".modal").classList.add("hidden");
+      document.querySelector(".modal-bg").classList.remove("modal-bg-active");
       document.querySelector(".contact-button").classList.remove("hidden");
     },
     validEmail(email) {
       let re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
     },
-    validateForm() {
+    validateForm: function(e) {
       this.errors = [];
 
       if (!this.name) {
@@ -97,16 +104,8 @@ export default {
         return true;
       }
 
-      return false;
-    },
-    submitForm: function(e) {
-      if (this.validateForm()) {
-        console.log("validated");
-        // this.closeForm();
-      } else {
-        console.log("nope");
-      }
       e.preventDefault();
+      return false;
     }
   }
 };

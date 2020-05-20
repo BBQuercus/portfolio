@@ -9,7 +9,7 @@
       <!-- Menu items -->
       <ul class="nav-links" id="navigation">
         <li @click="closeNavigation" v-for="route in routes" :key="route.path+route.name">
-          <router-link :class="isActive(route.path)" :to="route.path">{{route.name}}</router-link>
+          <router-link :class="{'router-link-active': isActive(route.path)}" :to="route.path">{{route.name}}</router-link>
         </li>
         <li>
           <button class="color-icon" @click="toggleColorMode">
@@ -44,6 +44,9 @@
         </li>
       </ul>
 
+      <!-- Background click -->
+      <div class="nav-bg hidden" @click="closeNavigation"></div>
+
       <!-- Burger icon -->
       <div class="burger" @click="toggleNavigation">
         <div class="line1"></div>
@@ -68,12 +71,14 @@ export default {
   },
   methods: {
     closeNavigation() {
-      document.querySelector(".nav-links").classList.remove("nav-active");
       document.querySelector(".burger").classList.remove("open");
+      document.querySelector(".nav-bg").classList.add("hidden");
+      document.querySelector(".nav-links").classList.remove("nav-active");
     },
     toggleNavigation() {
-      document.querySelector(".nav-links").classList.toggle("nav-active");
       document.querySelector(".burger").classList.toggle("open");
+      document.querySelector(".nav-bg").classList.toggle("hidden");
+      document.querySelector(".nav-links").classList.toggle("nav-active");
     },
     toggleColorMode() {
       if (document.documentElement.getAttribute("data-theme") === "light") {
@@ -96,9 +101,9 @@ export default {
     },
     isActive(name) {
       if (this.$route.name === "Home") {
-        return "active";
+        return true;
       } else if (this.$route.name === name) {
-        return "active";
+        return true;
       }
       return null;
     }

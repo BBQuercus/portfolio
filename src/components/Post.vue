@@ -1,6 +1,6 @@
 <template>
   <div class="post">
-    <h1 class="title" @click="print">{{this.title}}.</h1>
+    <h1 class="title">{{this.title}}.</h1>
     <div class="image" :style="{backgroundImage: `url(${this.image})`}"></div>
     <div class="right">
       <div class="links" v-if="this.type === 'Coding'">
@@ -84,7 +84,7 @@
           </svg>
         </a>
       </div>
-      <p class="text">{{this.text}}</p>
+      <p class="text" v-html="this.text"></p>
       <p class="hashes">{{this.hashes}}</p>
     </div>
   </div>
@@ -101,11 +101,6 @@ export default {
     website: String,
     text: String,
     hashes: String
-  },
-  methods: {
-    print() {
-      console.log(this.text);
-    }
   }
 };
 </script>

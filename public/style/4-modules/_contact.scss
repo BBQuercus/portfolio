@@ -10,8 +10,12 @@
     }
 }
 
-.modal {
+.modal-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
+
     top: 0px;
     left: 0px;
     height: 100%;
@@ -20,94 +24,102 @@
     background-color: rgba($color: #000000, $alpha: 0.3);
     z-index: 2;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
 
-    .contact-form {
-        padding: 5%;
-        max-height: calc(100vh - 5%);
-        min-width: 300px;
-        max-width: 80%;
-        overflow-y: auto;
+.modal-bg-active {
+    visibility: visible;
+    opacity: 1;
+}
 
-        color: var(--form-text);
-        background-color: var(--form-bg);
-        border-radius: 10px;
-        z-index: 3;
+.modal {
+    padding: 5%;
+    max-height: calc(100vh - 5%);
+    min-width: 300px;
+    max-width: 80%;
+    overflow-y: auto;
 
-        .error {
-            border: solid thin;
-            border-color: red !important;
+    color: var(--form-text);
+    background-color: var(--form-bg);
+    border-radius: 10px;
+    z-index: 4;
+
+    .error {
+        border: solid thin;
+        border-color: red !important;
+    }
+
+    .error-list {
+        padding-bottom: 10px;
+        li {
+            display: inline;
         }
-
-        .error-list {
-            padding-bottom: 10px;
-            li {
-                display: inline;
-            }
-            li:after {
-                content: ", ";
-            }
-            li:nth-child(n + 2):last-child:before {
-                content: "and ";
-            }
-            li:last-child:after {
-                content: ".";
-            }
+        li:after {
+            content: ", ";
         }
-
-        @include defButton;
-        .btn-close {
-            border: none;
-            background: none;
-            padding: 0px;
-            padding-bottom: 10px;
-            path {
-                fill: var(--icon);
-            }
-            :hover path {
-                fill: var(--icon-hover);
-            }
+        li:nth-child(n + 2):last-child:before {
+            content: "and ";
         }
-
-        label {
-            font-size: 16px;
+        li:last-child:after {
+            content: ".";
         }
+    }
 
-        input {
-            margin: 2px 0px 10px 0px;
-        }
+    @include defButton;
+    .btn-close {
+        border: none;
+        background: none;
+        padding: 0px;
+        padding-bottom: 10px;
 
-        textarea {
-            resize: vertical;
-            min-height: calc(30px);
-            margin-top: 2px;
+        width: 100%;
+        text-align: right;
+        path {
+            fill: var(--icon);
         }
+        :hover path {
+            fill: var(--icon-hover);
+        }
+    }
 
-        input,
-        textarea {
-            padding: 5px 8px;
-            width: 100%;
-            font-size: 16px;
-            color: var(--form-input-text);
-            border-radius: 2px;
-            border: solid medium;
-            border-color: var(--form-bg);
-            background-color: var(--form-input-bg);
-        }
+    label {
+        font-size: 16px;
+    }
 
-        input:focus,
-        textarea:focus {
-            border-color: var(--form-input-border) !important;
-        }
+    input {
+        margin: 2px 0px 10px 0px;
+    }
 
-        p {
-            padding: 2px 0px 10px 0px;
-        }
+    textarea {
+        resize: vertical;
+        min-height: calc(30px);
+        margin-top: 2px;
+    }
 
-        form button:hover {
-            @include buttonHover;
-        }
+    input,
+    textarea {
+        padding: 5px 8px;
+        width: 100%;
+        font-size: 16px;
+        color: var(--form-input-text);
+        border-radius: 2px;
+        border: solid medium;
+        border-color: var(--form-bg);
+        background-color: var(--form-input-bg);
+    }
+
+    input:focus,
+    textarea:focus {
+        border-color: var(--form-input-border) !important;
+    }
+
+    p {
+        padding: 2px 0px 10px 0px;
+    }
+
+    form button:hover {
+        @include buttonHover;
     }
 }

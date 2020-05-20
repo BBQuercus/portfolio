@@ -25,10 +25,14 @@ export default {
   },
   data() {
     return {
-      title: "A very interesting to be determined title.",
-      image: "./images/me.jpg",
+      title: "Spectacular science and awesometacular web development.",
+      image: "./images/me.jpeg",
       text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non sem nisl, morbi augue aliquet diam. Et in aliquet diam eget tellus at. Ultricies sit nisi at lacus aenean in nisl. Sollicitudin nibh sapien odio eu amet. <br /> Consectetur augue ridiculus risus, dolor enim consequat neque, massa. Mi gravida erat lectus sed integer egestas morbi consectetur suscipit. Sit porta gravida elementum eget. Eu diam facilisis non cursus est.",
+        `By day a molecular biologist, by night a web developer.
+        <br/><br/>
+        I love learning new things. Be it for science while establishing a new protocol or while learning about the new JS framework that gets released every other week.
+        <br/><br/>
+        Feel free to contact me for freelance projects, collaborations, or simply to say Hi using the links below.`,
       resume: "./resume.pdf"
     };
   }

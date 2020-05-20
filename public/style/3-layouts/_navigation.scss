@@ -13,7 +13,6 @@ nav {
     .logo {
         color: var(--text);
         text-decoration: none;
-        z-index: 2;
     }
 
     .nav-links {
@@ -42,6 +41,15 @@ nav {
         a:focus {
             color: var(--drop-hover);
         }
+    }
+
+    .nav-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
     }
 
     .burger {
@@ -88,12 +96,13 @@ nav {
     nav {
         height: 15vh;
         .burger {
-            z-index: 1;
+            z-index: 2;
             display: inline;
         }
         .nav-links {
-            position: absolute;
+            z-index: 3;
 
+            position: absolute;
             flex-direction: column;
 
             background-color: var(--drop);
@@ -103,13 +112,15 @@ nav {
             width: 50%;
             padding-right: 5%;
             min-height: 180px;
-            // height: calc(40% - 8vh);
 
             transform: translateX(100%);
             transition: transform 0.5s ease-in;
         }
         .nav-active {
             transform: translateX(0%);
+        }
+        .logo {
+            z-index: 4;
         }
     }
 }

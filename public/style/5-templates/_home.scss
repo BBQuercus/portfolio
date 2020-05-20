@@ -1,11 +1,9 @@
 .home-image {
-    background-image: url(../images/background.png);
+    background-image: var(--bg-image);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-color: var(--bg-home);
-    color: var(--text-home);
 }
 
 .home {
@@ -13,7 +11,6 @@
     flex-direction: column;
     align-items: stretch;
     height: 80vh;
-    // justify-items: flex-start;
     justify-content: space-evenly;
     padding: 5%;
 
@@ -24,25 +21,12 @@
     a {
         color: var(--text);
     }
-
-    @include defButton;
-    .button {
-        padding-top: 20px;
-        font-family: bold;
-        text-align: center;
-    }
 }
 
 @media only screen and (min-width: 800px) and (max-width: 1080px) {
     .home {
         h1 {
             font-size: 80px;
-        }
-    }
-    .button {
-        padding-top: 30px;
-        button {
-            font-size: 20px;
         }
     }
 }
@@ -53,13 +37,6 @@
         align-items: flex-start;
         h1 {
             font-size: 100px;
-        }
-
-        .button {
-            padding-top: 40px;
-            button {
-                font-size: 24px;
-            }
         }
     }
 }

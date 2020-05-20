@@ -14,6 +14,16 @@ export default {
   name: "app",
   components: {
     Navigation
+  },
+  watch: {
+    $route(to) {
+      const bodyClass = document.querySelector("body").classList;
+      if (to.name === "Home") {
+        bodyClass.add("home-image");
+      } else {
+        bodyClass.remove("home-image");
+      }
+    }
   }
 };
 </script>
