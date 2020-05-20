@@ -7,16 +7,29 @@
     font-family: regular, sans-serif;
 }
 
+*:focus,
+*:active {
+    outline: none !important;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
 /* Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE and Edge */
+* {
+    -ms-overflow-style: none;
 }
 
 html,
@@ -31,4 +44,11 @@ body {
 button {
     background: none;
     border: none;
+}
+
+svg {
+    stroke: none;
+    :hover {
+        cursor: pointer;
+    }
 }

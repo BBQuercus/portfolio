@@ -2,12 +2,21 @@
   <div id="coding">
     <Post
       type="Coding"
+      title="Portfolio"
+      image="./images/me.png"
+      github="https://github.com/BBQuercus/portfolio"
+      website="http://bastianeichenberger.ch"
+      text="Tellus ornare porta lectus proin. Neque nisl quis iaculis suspendisse nunc. Sit donec vivamus volutpat suspendisse mauris nam nunc. Nulla senectus ac odio turpis dictumst morbi nibh. Mattis orci, sed lectus posuere adipiscing vitae ut eu. Duis molestie vulputate tincidunt et diam diam quam rhoncus, pellentesque. Lobortis massa vitae eget lobortis. Magna phasellus quisque massa, tincidunt."
+      hashes="#Vue JS #Custom CSS #UI/UX Design"
+    />
+    <Post
+      type="Coding"
       title="Apnea"
       image="./images/apnea.png"
       github="https://github.com/BBQuercus/appnea"
       website="http://apnea.netlify.com"
       text="Tellus ornare porta lectus proin. Neque nisl quis iaculis suspendisse nunc. Sit donec vivamus volutpat suspendisse mauris nam nunc. Nulla senectus ac odio turpis dictumst morbi nibh. Mattis orci, sed lectus posuere adipiscing vitae ut eu. Duis molestie vulputate tincidunt et diam diam quam rhoncus, pellentesque. Lobortis massa vitae eget lobortis. Magna phasellus quisque massa, tincidunt."
-      hashes="#SASS #Custom CSS #Design #Vanilla JS"
+      hashes="#Custom CSS #UI Design #Vanilla JS"
     />
     <Post
       type="Coding"

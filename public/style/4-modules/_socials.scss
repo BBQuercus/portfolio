@@ -1,12 +1,16 @@
 .socials {
     display: flex;
     align-items: baseline;
+    padding-top: 20px;
 
     li {
-        padding: 10px;
+        padding: 0px 10px;
         list-style: none;
     }
     path {
-        fill: var(--text);
+        fill: var(--icon);
+    }
+    svg:hover path {
+        fill: var(--icon-hover);
     }
 }

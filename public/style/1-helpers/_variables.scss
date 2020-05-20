@@ -1,24 +1,43 @@
 html {
-    --blue: #00a3ff;
-    --text: #000000;
-    --text-home: #ffffff;
     --bg: #ffffff;
-    --bg-home: #4e4e4e;
-    --bg-input: #dfdfdf;
-    --menu-drop: #dfdfdf;
-    --menu-drop-text: #000000;
-    --menu-drop-hover: #4e4e4e;
+    --blue: #00a3ff;
+
+    --btn-hover: #4e4e4e;
+    --btn-hover-text: #ffffff;
+
+    --drop-hover: #000000;
+    --drop-text: #a0a0a0;
+    --drop: #dfdfdf;
+
+    --text: #000000;
+
+    --icon: #000000;
+    --icon-hover: #4e4e4e;
+
+    --form-bg: #dfdfdf;
+    --form-input-bg: #ffffff;
+    --form-input-border: #00a3ff;
+    --form-input-text: #000000;
+    --form-text: #000000;
 }
 
 html[data-theme="dark"] {
-    --text: #dfdfdf;
-    --text-home: #000000;
     --bg: #000000;
-    --bg-home: #000000;
-    --bg-input: #4e4e4e;
-    --menu-drop: #4e4e4e;
-    --menu-drop-text: #dfdfdf;
-    --menu-drop-hover: #ffffff;
+
+    --drop-hover: #ffffff;
+    --drop-text: #a0a0a0;
+    --drop: #4e4e4e;
+
+    --text: #dfdfdf;
+
+    --icon: #dfdfdf;
+    --icon-hover: #ffffff;
+
+    --form-bg: #4e4e4e;
+    --form-input-bg: #dfdfdf;
+    --form-input-border: #00a3ff;
+    --form-input-text: #000000;
+    --form-text: #ffffff;
 }
 
 .hidden {

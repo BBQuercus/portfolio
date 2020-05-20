@@ -11,7 +11,7 @@
     <Post
       type="Biology"
       title="Previous"
-      image="./images/past.png"
+      image="./images/past.jpg"
       text="Diam est nibh ac pharetra varius nisl. Amet, eu phasellus ut tristique laoreet mollis eget elementum praesent. Turpis dictum faucibus pellentesque mauris arcu vestibulum, libero laoreet. Adipiscing velit arcu risus est nunc cras pellentesque tortor. Eget tristique vestibulum, nulla et aliquam magna. Enim tellus, pellentesque egestas tellus ipsum. Pretium, diam at orci morbi. Adipiscing amet, scelerisque sit sit neque ultricies bibendum turpis.
       
       Adipiscing velit arcu risus est nunc cras pellentesque tortor. Eget tristique vestibulum, nulla et aliquam magna. Enim tellus, pellentesque egestas tellus ipsum. Pretium, diam at orci morbi. Adipiscing amet, scelerisque sit sit neque ultricies bibendum turpis."

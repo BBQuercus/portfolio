@@ -1,11 +1,15 @@
 <template>
   <div class="about">
     <div class="image" :style="{backgroundImage: `url(${this.image})`}"></div>
-    <h1 class="title">{{this.title}}</h1>
-    <p class="text" v-html="this.text"></p>
-    <button class="resume" :href="this.resume">Resume</button>
-    <Contact />
-    <Socials />
+    <div class="right">
+      <h1 class="title">{{this.title}}</h1>
+      <p class="text" v-html="this.text"></p>
+      <a :href="this.resume" target="_blank">
+        <button class="resume">Résumé</button>
+      </a>
+      <Contact />
+      <Socials />
+    </div>
   </div>
 </template>
 
@@ -22,10 +26,10 @@ export default {
   data() {
     return {
       title: "A very interesting to be determined title.",
-      image: "./images/me.png",
+      image: "./images/me.jpg",
       text:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non sem nisl, morbi augue aliquet diam. Et in aliquet diam eget tellus at. Ultricies sit nisi at lacus aenean in nisl. Sollicitudin nibh sapien odio eu amet. <br /> Consectetur augue ridiculus risus, dolor enim consequat neque, massa. Mi gravida erat lectus sed integer egestas morbi consectetur suscipit. Sit porta gravida elementum eget. Eu diam facilisis non cursus est.",
-      resume: "./images/me.png"
+      resume: "./resume.pdf"
     };
   }
 };

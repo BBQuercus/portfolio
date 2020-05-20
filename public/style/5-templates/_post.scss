@@ -21,10 +21,31 @@
     p {
         padding: 10px 0px;
         font-size: 16px;
-        white-space: pre-wrap; 
+        white-space: pre-wrap;
     }
 
     path {
         fill: var(--text);
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .post {
+        display: grid;
+        grid-template-columns: 20% 1fr;
+
+        h1 {
+            grid-row: 1/2;
+            font-size: 48px;
+        }
+
+        .image {
+            grid-row: 2/3;
+        }
+
+        .right {
+            grid-row: 2/3;
+            grid-column: 2/3;
+        }
     }
 }

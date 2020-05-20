@@ -1,4 +1,4 @@
-.body-home {
+.home-image {
     background-image: url(../images/background.png);
     background-position: center center;
     background-repeat: no-repeat;
@@ -12,7 +12,9 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-items: center;
+    height: 80vh;
+    // justify-items: flex-start;
+    justify-content: space-evenly;
     padding: 5%;
 
     h1 {
@@ -28,5 +30,36 @@
         padding-top: 20px;
         font-family: bold;
         text-align: center;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1080px) {
+    .home {
+        h1 {
+            font-size: 80px;
+        }
+    }
+    .button {
+        padding-top: 30px;
+        button {
+            font-size: 20px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .home {
+        padding: 0% 10% 0% 10%;
+        align-items: flex-start;
+        h1 {
+            font-size: 100px;
+        }
+
+        .button {
+            padding-top: 40px;
+            button {
+                font-size: 24px;
+            }
+        }
     }
 }

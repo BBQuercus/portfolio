@@ -24,10 +24,10 @@
         </button>
         <form @submit="submitForm" action="/cgi-sys/FormMail.cgi" method="post">
           <label for="name">Name*</label>
-          <input id="input-name" v-model="name" type="text" name="name" tabindex="1" />
+          <input id="input-name" v-model="name" type="text" name="name" tabindex="1" autocomplete="off" />
 
           <label for="email">Email*</label>
-          <input id="input-email" v-model="email" type="email" tabindex="2" />
+          <input id="input-email" v-model="email" type="email" tabindex="2" autocomplete="off" />
 
           <label for="message">Message*</label>
           <textarea

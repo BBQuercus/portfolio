@@ -9,20 +9,20 @@
       <!-- Menu items -->
       <ul class="nav-links" id="navigation">
         <li @click="closeNavigation" v-for="route in routes" :key="route.path+route.name">
-          <router-link :to="route.path">{{route.name}}</router-link>
+          <router-link :class="isActive(route.path)" :to="route.path">{{route.name}}</router-link>
         </li>
         <li>
-          <button @click="toggleColorMode">
+          <button class="color-icon" @click="toggleColorMode">
             <svg
               id="moon-icon"
               width="24"
               height="24"
-              viewBox="-5 -5 24 24"
+              viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M9.88 8.97334C8.92375 8.01671 8.27251 6.7981 8.0086 5.47148C7.74468 4.14487 7.87993 2.7698 8.39724 1.52002C6.92228 1.81038 5.56746 2.5341 4.50604 3.59862C1.53824 6.56642 1.53824 11.3787 4.50604 14.3465C7.4746 17.3151 12.2862 17.3143 15.2547 14.3465C16.319 13.2852 17.0426 11.9307 17.3333 10.4561C16.0835 10.9733 14.7085 11.1085 13.3819 10.8446C12.0553 10.5807 10.8367 9.92951 9.88 8.97334Z"
+                d="M12.4799 11.3347C11.272 10.1263 10.4494 8.58705 10.116 6.91132C9.78264 5.2356 9.95348 3.49866 10.6069 1.92C8.74382 2.28677 7.03246 3.20094 5.69173 4.5456C1.94293 8.2944 1.94293 14.3731 5.69173 18.1219C9.44149 21.8717 15.5192 21.8707 19.269 18.1219C20.6133 16.7813 21.5274 15.0704 21.8946 13.2077C20.3159 13.861 18.579 14.0318 16.9033 13.6984C15.2276 13.365 13.6883 12.5425 12.4799 11.3347V11.3347Z"
                 fill="black"
               />
             </svg>
@@ -50,7 +50,6 @@
         <div class="line2"></div>
         <div class="line3"></div>
       </div>
-
     </nav>
   </div>
 </template>
@@ -70,6 +69,7 @@ export default {
   methods: {
     closeNavigation() {
       document.querySelector(".nav-links").classList.remove("nav-active");
+      document.querySelector(".burger").classList.remove("open");
     },
     toggleNavigation() {
       document.querySelector(".nav-links").classList.toggle("nav-active");
@@ -93,6 +93,14 @@ export default {
       } else {
         favicon.setAttribute("href", "/fav_light.ico");
       }
+    },
+    isActive(name) {
+      if (this.$route.name === "Home") {
+        return "active";
+      } else if (this.$route.name === name) {
+        return "active";
+      }
+      return null;
     }
   }
 };

@@ -1,3 +1,15 @@
+.contact {
+    .contact-button {
+        margin-top: 20px;
+        width: 160px;
+        cursor: pointer;
+    }
+
+    .contact-button:hover {
+        @include buttonHover;
+    }
+}
+
 .modal {
     position: fixed;
     top: 0px;
@@ -14,12 +26,13 @@
 
     .contact-form {
         padding: 5%;
-        background-color: var(--bg-input);
         max-height: calc(100vh - 5%);
-        overflow-y: auto;
         min-width: 300px;
         max-width: 80%;
+        overflow-y: auto;
 
+        color: var(--form-text);
+        background-color: var(--form-bg);
         border-radius: 10px;
         z-index: 3;
 
@@ -40,7 +53,7 @@
                 content: "and ";
             }
             li:last-child:after {
-                content: "";
+                content: ".";
             }
         }
 
@@ -51,7 +64,10 @@
             padding: 0px;
             padding-bottom: 10px;
             path {
-                fill: var(--text)
+                fill: var(--icon);
+            }
+            :hover path {
+                fill: var(--icon-hover);
             }
         }
 
@@ -60,25 +76,38 @@
         }
 
         input {
-            margin-bottom: 10px;
+            margin: 2px 0px 10px 0px;
         }
 
         textarea {
             resize: vertical;
             min-height: calc(30px);
+            margin-top: 2px;
         }
 
         input,
         textarea {
             padding: 5px 8px;
-            font-size: 16px;
-            border-radius: 2px;
-            border-style: none;
             width: 100%;
-            background-color: var(--bg);
-            :focus {
-                border-color: var(--blue);
-            }
+            font-size: 16px;
+            color: var(--form-input-text);
+            border-radius: 2px;
+            border: solid medium;
+            border-color: var(--form-bg);
+            background-color: var(--form-input-bg);
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--form-input-border) !important;
+        }
+
+        p {
+            padding: 2px 0px 10px 0px;
+        }
+
+        form button:hover {
+            @include buttonHover;
         }
     }
 }

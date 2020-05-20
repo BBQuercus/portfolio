@@ -3,42 +3,49 @@ nav {
     align-items: center;
     justify-content: space-between;
     min-height: 8vh;
+    max-height: 20vh;
     padding: 5%;
+
+    span {
+        font-family: bold;
+    }
 
     .logo {
         color: var(--text);
-        font-family: regular;
         text-decoration: none;
         z-index: 2;
     }
 
     .nav-links {
         display: flex;
-        justify-content: center;
-        width: 40%;
+        justify-content: space-around;
         align-items: flex-end;
+        width: 30%;
+
+        .router-link-active {
+            color: var(--text);
+        }
 
         li {
             list-style: none;
         }
 
         a {
-            color: var(--menu-drop-text);
+            font-family: bold;
+            color: var(--drop-text);
             display: block;
             padding: 8px;
             text-decoration: none;
             transition: 0.3s;
         }
-
         a:hover,
         a:focus {
-            color: var(--menu-drop-hover);
+            color: var(--drop-hover);
         }
     }
 
     .burger {
         display: none;
-
         cursor: pointer;
 
         div {
@@ -55,18 +62,21 @@ nav {
         .line1 {
             transform: rotate(-45deg) translate(-5px, 5px);
         }
-
         .line2 {
             opacity: 0;
         }
-
         .line3 {
             transform: rotate(45deg) translate(-5px, -5px);
         }
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+.resize-animation-stopper * {
+    transition: none !important;
+    animation: none !important;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1080px) {
     nav {
         .nav-links {
             width: 40%;
@@ -86,7 +96,7 @@ nav {
 
             flex-direction: column;
 
-            background-color: var(--menu-drop);
+            background-color: var(--drop);
             border-radius: 10px 0px 0px 10px;
             top: calc(15vh);
             right: 0px;
