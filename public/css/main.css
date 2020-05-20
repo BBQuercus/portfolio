@@ -1,6 +1,6 @@
 html {
   --bg: #e9e9e9;
-  --bg-image: url("../images/home_light.jpg");
+  --bg-image: url("../images/home_light.jpeg");
   --blue: #00a3ff;
   --btn-hover: #4e4e4e;
   --btn-hover-text: #ffffff;
@@ -338,9 +338,8 @@ nav .open .line3 {
   position: fixed;
   top: 0px;
   left: 0px;
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  padding: 10%;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 2;
   visibility: hidden;

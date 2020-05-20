@@ -23,6 +23,8 @@
           </svg>
         </button>
         <form @submit="validateForm" action="/cgi-sys/FormMail.cgi" method="POST">
+          <input type="hidden" name="conf" value="mein_formular" />
+
           <label for="name">Name*</label>
           <input
             id="input-name"
@@ -34,7 +36,14 @@
           />
 
           <label for="email">Email*</label>
-          <input id="input-email" v-model="email" type="email" tabindex="2" autocomplete="off" />
+          <input
+            id="input-email"
+            v-model="email"
+            type="email"
+            name="email"
+            tabindex="2"
+            autocomplete="off"
+          />
 
           <label for="message">Message*</label>
           <textarea
@@ -101,6 +110,7 @@ export default {
         this.errors.push("message");
       }
       if (!this.errors.length) {
+        alert("Your message was sent.")
         return true;
       }
 
