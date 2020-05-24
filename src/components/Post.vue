@@ -1,7 +1,7 @@
 <template>
   <div class="post">
-    <h1 class="title">{{this.title}}.</h1>
-    <div class="image" :style="{backgroundImage: `url(${this.image})`}"></div>
+    <h1 class="title">{{ this.title }}.</h1>
+    <div class="image" :style="{ backgroundImage: `url(${this.image})` }"></div>
     <div class="right">
       <div class="links" v-if="this.type === 'Coding'">
         <a class="github" :href="this.github" target="_blank">
@@ -85,7 +85,7 @@
         </a>
       </div>
       <p class="text" v-html="this.text"></p>
-      <p class="hashes">{{this.hashes}}</p>
+      <p class="hashes">{{ this.hashes }}</p>
     </div>
   </div>
 </template>
@@ -104,6 +104,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

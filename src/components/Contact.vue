@@ -110,7 +110,7 @@ export default {
         this.errors.push("message");
       }
       if (!this.errors.length) {
-        alert("Your message was sent.")
+        alert("Your message was sent.");
         return true;
       }
 
@@ -120,6 +120,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>
