@@ -3,7 +3,7 @@
     <nav>
       <!-- Logo -->
       <router-link to="/" class="logo">
-        <span @click="closeNavigation">Bastian T. Eichenberger</span>
+        <span @click="closeNavigation">Bastian Eichenberger</span>
       </router-link>
 
       <!-- Menu items -->
