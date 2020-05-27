@@ -13,6 +13,10 @@ nav {
     .logo {
         color: var(--text);
         text-decoration: none;
+
+        span:hover {
+            color: var(--drop-hover);
+        }
     }
 
     .nav-links {
@@ -40,6 +44,9 @@ nav {
         a:hover,
         a:focus {
             color: var(--drop-hover);
+        }
+        path:hover {
+            fill: var(--drop-hover);
         }
     }
 

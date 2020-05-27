@@ -4,7 +4,7 @@ html {
   --blue: #00a3ff;
   --btn-hover: #4e4e4e;
   --btn-hover-text: #ffffff;
-  --drop-hover: #000000;
+  --drop-hover: #4e4e4e;
   --drop-text: #a0a0a0;
   --drop: #dfdfdf;
   --text: #000000;
@@ -18,7 +18,7 @@ html {
 }
 
 html[data-theme="dark"] {
-  --bg: #000000;
+  --bg: #121212;
   --bg-image: url("../images/home_dark.jpeg");
   --drop-hover: #ffffff;
   --drop-text: #a0a0a0;
@@ -130,6 +130,10 @@ nav .logo {
   text-decoration: none;
 }
 
+nav .logo span:hover {
+  color: var(--drop-hover);
+}
+
 nav .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -163,6 +167,10 @@ nav .nav-links a {
 nav .nav-links a:hover,
 nav .nav-links a:focus {
   color: var(--drop-hover);
+}
+
+nav .nav-links path:hover {
+  fill: var(--drop-hover);
 }
 
 nav .nav-bg {
@@ -321,6 +329,7 @@ nav .open .line3 {
   cursor: pointer;
 }
 
+.contact .contact-button:focus,
 .contact .contact-button:hover {
   background-color: var(--btn-hover);
   color: var(--btn-hover-text);
@@ -453,7 +462,7 @@ nav .open .line3 {
   padding: 2px 0px 10px 0px;
 }
 
-.modal form button:hover {
+.modal button:hover {
   background-color: var(--btn-hover);
   color: var(--btn-hover-text);
 }
@@ -513,6 +522,11 @@ nav .open .line3 {
 
 .home a {
   color: var(--text);
+}
+
+.home a:focus,
+.home a:hover {
+  color: var(--drop-hover);
 }
 
 @media only screen and (min-width: 800px) and (max-width: 1080px) {

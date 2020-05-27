@@ -14,7 +14,7 @@
       title="Previous"
       image="./images/past.jpeg"
       alt="Caenorhabditis elegans nematodes"
-      text="During my Bachelor studies at the Albert Ludwigs University of Freiburg im Brsg. (Germany), I had the privilege of studying small nematodes called <i>Caenorhabditis elegans</i> in the <a href='https://celegans.de/' target='_blank'>Baumeister lab</a>. My goal was to investigate an endoribonuclease called <i>endu-2</i>. Thanks to many sacrificed worms, I was able to show various protein-RNA interactions and potential involvement in DNA methylation.
+      text="During my Bachelor studies at the Albert Ludwigs University of Freiburg im Brsg. (Germany), I had the privilege of studying small nematodes called <i>Caenorhabditis elegans</i> in the <a href='https://celegans.de/' target='_blank'>Baumeister lab</a>. My goal was to investigate an endoribonuclease called ENDU-2. Thanks to many sacrificed worms, I was able to show various protein-RNA interactions and potential involvement in DNA methylation.
       
       An extended stay as a research associate benefited me by solidifying staple lab techniques ranging from making home-made competent cells and DNA polymerase as well as a plethora of worm-specific applications."
     />

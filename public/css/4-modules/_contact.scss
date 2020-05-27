@@ -5,6 +5,7 @@
         cursor: pointer;
     }
 
+    .contact-button:focus,
     .contact-button:hover {
         @include buttonHover;
     }
@@ -118,7 +119,7 @@
         padding: 2px 0px 10px 0px;
     }
 
-    form button:hover {
+    button:hover {
         @include buttonHover;
     }
 }
