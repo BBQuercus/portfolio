@@ -1,7 +1,11 @@
 <template>
   <div class="post">
     <h1 class="title">{{ this.title }}.</h1>
-    <div class="image" :style="{ backgroundImage: `url(${this.image})` }" :alt="alt"></div>
+    <div
+      class="image"
+      :style="{ backgroundImage: `url(${this.image})` }"
+      :alt="alt"
+    ></div>
     <div class="right">
       <div class="links" v-if="this.type === 'Coding'">
         <a class="github" :href="this.github" target="_blank">

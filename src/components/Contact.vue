@@ -22,7 +22,11 @@
             />
           </svg>
         </button>
-        <form @submit="validateForm" action="/cgi-sys/FormMail.cgi" method="POST">
+        <form
+          @submit="validateForm"
+          action="/cgi-sys/FormMail.cgi"
+          method="POST"
+        >
           <input type="hidden" name="conf" value="mein_formular" />
 
           <label for="name">Name*</label>

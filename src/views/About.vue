@@ -1,6 +1,10 @@
 <template>
   <div class="about">
-    <div class="image" :style="{ backgroundImage: `url(${this.image})` }" :alt="alt"></div>
+    <div
+      class="image"
+      :style="{ backgroundImage: `url(${this.image})` }"
+      :alt="alt"
+    ></div>
     <div class="right">
       <h1 class="title" v-html="this.title"></h1>
       <p class="text" v-html="this.text"></p>

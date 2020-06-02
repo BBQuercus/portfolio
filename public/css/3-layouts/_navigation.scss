@@ -5,6 +5,7 @@ nav {
     min-height: 8vh;
     max-height: 20vh;
     padding: 5%;
+    font-size: 24px;
 
     span {
         font-family: bold;
@@ -23,7 +24,7 @@ nav {
         display: flex;
         justify-content: space-around;
         align-items: flex-end;
-        width: 30%;
+        width: 40%;
 
         .router-link-active {
             color: var(--text);
@@ -93,6 +94,7 @@ nav {
 
 @media only screen and (min-width: 768px) and (max-width: 1080px) {
     nav {
+        font-size: 16px;
         .nav-links {
             width: 40%;
         }
@@ -101,7 +103,9 @@ nav {
 
 @media only screen and (max-width: 768px) {
     nav {
+        font-size: 16px;
         height: 15vh;
+
         .burger {
             z-index: 2;
             display: inline;

@@ -8,8 +8,16 @@
 
       <!-- Menu items -->
       <ul class="nav-links" id="navigation">
-        <li @click="closeNavigation" v-for="route in routes" :key="route.path+route.name">
-          <router-link :class="{'router-link-active': isActive(route.path)}" :to="route.path">{{route.name}}</router-link>
+        <li
+          @click="closeNavigation"
+          v-for="route in routes"
+          :key="route.path + route.name"
+        >
+          <router-link
+            :class="{ 'router-link-active': isActive(route.path) }"
+            :to="route.path"
+            >{{ route.name }}</router-link
+          >
         </li>
         <li>
           <button class="color-icon" @click="toggleColorMode">

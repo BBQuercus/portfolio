@@ -2,6 +2,16 @@
   <div id="coding">
     <Post
       type="Coding"
+      title="Eichenbergers"
+      image="./images/mom.jpg"
+      alt="Child with mom walking into the sunset"
+      github="https://github.com/BBQuercus/eichenbergers"
+      website="http://renateeichenberger.ch"
+      text="My first real client - well, almost. My mother's website for her website needed a do-over. After getting more familar with Vue for my own portfolio, I decided to go with it again. As a blog was required, I learned a bit more about content management systems and API usages. After trying out node.js powered CMS's, I went for a headless approach with wordpress which allows for easy posting and a reliable infrastructure. To make sure that the API isn't called over again, I did my first babysteps with VueX."
+      hashes="#Vue JS #VueX #Wordpress #Custom CSS #UI/UX Design"
+    />
+    <Post
+      type="Coding"
       title="Portfolio"
       image="./images/portfolio.jpeg"
       alt="Hello in neon letters"
